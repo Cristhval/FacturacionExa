@@ -1,9 +1,37 @@
-public class PagoEfectivo extends MetodoDePago{
+public class PagoEfectivo extends MetodoDePago {
 
     private float cambio;
 
-    public float calcularCambio(){
+    // Constructor
+    public PagoEfectivo(float montoPagado, float cuentasPorCobrar) {
+        setMontoPagado(montoPagado);
+        setCuentasPorCobrar(cuentasPorCobrar);
+        this.cambio = calcularCambio();
+    }
 
-        return 0;
+    public float getCambio() {
+        return cambio;
+    }
+
+    private void setCambio(float cambio) {
+        this.cambio = cambio;
+    }
+
+    public float calcularCambio() {
+        return getMontoPagado() - getCuentasPorCobrar();
+    }
+
+    @Override
+    public boolean esValidoElPago() {
+        return getMontoPagado() >= getCuentasPorCobrar();
+    }
+
+    @Override
+    public String toString() {
+        return "PagoEfectivo{" +
+                "montoPagado=" + getMontoPagado() +
+                ", cuentasPorCobrar=" + getCuentasPorCobrar() +
+                ", cambio=" + calcularCambio() +
+                '}';
     }
 }
