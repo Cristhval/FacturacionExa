@@ -4,8 +4,8 @@ import java.util.List;
 public class Promocion {
 
     private String descripcion;
-    private float porcentajeDescuento; // Porcentaje de descuento aplicado a las facturas
-    private List<Factura> facturaList; // Asociación 0..* con Factura
+    private float porcentajeDescuento;//Porcentaje de descuento aplicado a las facturas
+    private List<Factura> facturaList;//Asociacion 0..* con Factura
 
     // Constructor
     public Promocion(String descripcion, float porcentajeDescuento) {
@@ -35,7 +35,7 @@ public class Promocion {
         return facturaList;
     }
 
-    // Métodos para gestionar la asociación
+    //Metodos para gestionar la asociacion
     public void agregarFactura(Factura factura) {
         facturaList.add(factura);
     }
@@ -44,12 +44,13 @@ public class Promocion {
         facturaList.remove(factura);
     }
 
-    // Método para aplicar la promoción a todas las facturas asociadas
+    //Metodo para aplicar la promoción a todas las facturas asociadas
     public void aplicarPromocion() {
         for (Factura factura : facturaList) {
             float nuevoDescuento = factura.getDescuento() + porcentajeDescuento;
-            factura.setDescuento(nuevoDescuento); // Aumenta el descuento de la factura
-            factura.agregarItemFactura(new ItemFactura(1, new Producto("Promoción aplicada", 0, descripcion))); // Detalle extra
+            factura.setDescuento(nuevoDescuento);//Aumenta el descuento de la factura
+            factura.agregarItemFactura(new ItemFactura(1, new Producto("Promoción aplicada",
+                    0, descripcion)));
         }
     }
 }

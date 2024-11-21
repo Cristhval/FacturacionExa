@@ -6,7 +6,7 @@ public class PagoTarjeta extends MetodoDePago {
     private String titular;
     private Date vencimiento;
 
-    // Constructor
+    //Constructor
     public PagoTarjeta(float montoPagado, float cuentasPorCobrar, int numeroTarjeta, String titular, Date vencimiento) {
         setMontoPagado(montoPagado);
         setCuentasPorCobrar(cuentasPorCobrar);
@@ -41,7 +41,6 @@ public class PagoTarjeta extends MetodoDePago {
 
     @Override
     public boolean esValidoElPago() {
-        // Supongamos que un pago con tarjeta es válido si la tarjeta no ha vencido.
         return new Date().before(vencimiento);
     }
 }

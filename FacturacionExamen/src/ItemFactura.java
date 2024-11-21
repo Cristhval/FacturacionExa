@@ -2,13 +2,13 @@ public class ItemFactura {
 
     private float subtotal;
     private int cantidad;
-    private Producto producto; // Relacion con Producto
+    private Producto producto; //Relacion con Producto
 
     //Constructor
     public ItemFactura(int cantidad, Producto producto) {
         this.cantidad = cantidad;
         this.producto = producto;
-        this.subtotal = calcularSubtotal(); //Calcula el subtotal al crear el ItemFactura
+        this.subtotal = calcularSubtotal();//Calcula el subtotal al crear el ItemFactura
     }
 
     //Getters y Setters
@@ -22,7 +22,7 @@ public class ItemFactura {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-        this.subtotal = calcularSubtotal(); //Actualiza el subtotal
+        this.subtotal = calcularSubtotal();//Actualiza el subtotal
     }
 
     public Producto getProducto() {

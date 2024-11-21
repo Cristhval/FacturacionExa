@@ -11,8 +11,8 @@ public class Factura implements DescuentoAplicable {
     private float impuestoTotal;
     private float descuento;
     private float extras;
-    private List<ItemFactura> itemFacturaList; //Relacion de composición con ItemFactura
-    private List<MetodoDePago> metodoDePagoList; //Relacion de asociación con MetodoDePago
+    private List<ItemFactura> itemFacturaList; //Relacion de composicion con ItemFactura
+    private List<MetodoDePago> metodoDePagoList; //Relacion de asociacion con MetodoDePago
 
 
     //Constructor
@@ -21,10 +21,10 @@ public class Factura implements DescuentoAplicable {
         this.cliente = cliente;
         this.descuento = descuento;
         this.extras = extras;
-        this.fecha = fecha;  // Asignar la fecha de la factura
+        this.fecha = fecha;  //Asignar la fecha de la factura
         this.itemFacturaList = new ArrayList<>();
         this.metodoDePagoList = new ArrayList<>();
-        this.total = 0; // Inicializamos el total
+        this.total = 0; //Inicializamos el total
         this.impuestoTotal = 0;
     }
 
@@ -128,7 +128,7 @@ public class Factura implements DescuentoAplicable {
         }
     }
 
-    // Métodos adicionales
+    //Metodos adicionales
     public float calcularMontoTotal() {
         return total + impuestoTotal;
     }

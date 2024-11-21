@@ -47,7 +47,7 @@ public class Main {
         producto2.mostrarItemsFactura();
         producto3.mostrarItemsFactura();
 
-        //Crear una fecha (puede ser la fecha actual o una específica)
+        //Crear fecha
         Date fechaFactura = new Date();  // Fecha actual
 
         //Crear una factura y pasar el cliente, descuento, extras y fecha
@@ -58,39 +58,39 @@ public class Main {
         factura.agregarItemFactura(item2);
         factura.agregarItemFactura(item3);
 
-        //Crear promoción
+        //Crear promocion
         Promocion promocionDescuentoCumpleaños = new Promocion("cumpleaños", 10); // Promoción del 10%
 
-        //Asociar facturas a la promoción
+        //Asociar facturas a la promocion
         promocionDescuentoCumpleaños.agregarFactura(factura);
 
-        // Aplicar promoción
+        //Aplicar promocion
         promocionDescuentoCumpleaños.aplicarPromocion();
 
-        // Imprimir factura
+        //Imprimir factura
         System.out.println(factura.imprimirFactura());
 
-        // Crear métodos de pago
+        //Crear metodos de pago
         PagoEfectivo efectivo = new PagoEfectivo(150, 101.596f); // Cambio = 50
         // Asociar métodos de pago a la factura
         factura.agregarMetodoDePago(efectivo);
 
-        // Mostrar detalles de los métodos de pago
+        //Mostrar detalles de los metodos de pago
         factura.mostrarMetodosDePago();
 
-        // Enviar factura por correo
+        //Enviar factura por correo
         factura.enviarFacturaAlCorreo();
 
-        // Crear Historial
+        //Crear Historial
         HistorialFactura historial = new HistorialFactura();
 
-        // Agregar facturas al historial
+        //Agregar facturas al historial
         historial.agregarFactura(factura);
 
-        // Mostrar el historial completo
+        //Mostrar el historial completo
         historial.mostrarHistorial();
 
-        // Consultar por rango de montos
+        //Consultar por rango de montos
         historial.consultarPorMonto(100, 300);
     }
 }

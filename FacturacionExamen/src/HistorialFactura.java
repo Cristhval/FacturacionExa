@@ -20,17 +20,13 @@ public class HistorialFactura {
     public void consultarFacturasPorFecha(Date fecha) {
         System.out.println("Consultando facturas por fecha: " + fecha);
         for (Factura factura : facturaList) {
-            // Suponiendo que la clase Factura tenga un atributo Date para la fecha
-            // Si no lo tiene, agregar un atributo de tipo Date a la clase Factura
-            // Ejemplo: factura.getFecha()
+
         }
     }
 
     public void consultarPorCliente(String clienteNombre) {
         System.out.println("Consultando facturas por cliente: " + clienteNombre);
         for (Factura factura : facturaList) {
-            // Suponiendo que Factura tenga un atributo de cliente, por ejemplo:
-            // factura.getCliente().getNombre()
         }
     }
 
