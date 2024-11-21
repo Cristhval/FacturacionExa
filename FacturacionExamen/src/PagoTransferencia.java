@@ -3,7 +3,7 @@ public class PagoTransferencia extends MetodoDePago {
     private int numeroTransferencia;
     private String bancoOrigen;
 
-    // Constructor
+    //Constructor
     public PagoTransferencia(float montoPagado, float cuentasPorCobrar, int numeroTransferencia, String bancoOrigen) {
         setMontoPagado(montoPagado);
         setCuentasPorCobrar(cuentasPorCobrar);
@@ -29,7 +29,7 @@ public class PagoTransferencia extends MetodoDePago {
 
     @Override
     public boolean esValidoElPago() {
-        // Validamos la transferencia si hay un número de transferencia y un banco de origen.
+        //Validamos la transferencia si hay un numero de transferencia y un banco de origen.
         return numeroTransferencia > 0 && bancoOrigen != null && !bancoOrigen.isEmpty();
     }
 }

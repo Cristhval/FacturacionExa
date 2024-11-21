@@ -9,7 +9,8 @@ public abstract class Persona {
 
 
     //Constructor
-    public Persona(String nombre, String apellido, String direccion, String correoElectronico, String numeroCedula, String numeroTelefono) {
+    public Persona(String nombre, String apellido, String direccion, String correoElectronico,
+                   String numeroCedula, String numeroTelefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;

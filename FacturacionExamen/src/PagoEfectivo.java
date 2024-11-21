@@ -2,7 +2,7 @@ public class PagoEfectivo extends MetodoDePago {
 
     private float cambio;
 
-    // Constructor
+    //Constructor
     public PagoEfectivo(float montoPagado, float cuentasPorCobrar) {
         setMontoPagado(montoPagado);
         setCuentasPorCobrar(cuentasPorCobrar);

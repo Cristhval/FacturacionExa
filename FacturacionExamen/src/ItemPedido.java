@@ -5,7 +5,7 @@ public class ItemPedido {
 
     private float precioUnitario;
     private String descripcion;
-    private List<Producto> productoList; // Relación 1 a N con Producto
+    private List<Producto> productoList; //Relacion 1 a N con Producto
 
     //Constructor
     public ItemPedido(float precioUnitario, String descripcion) {
