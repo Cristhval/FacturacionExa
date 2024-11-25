@@ -14,6 +14,72 @@ El historial de facturas almacena todas las facturas emitidas, permitiendo búsq
 
 Este sistema asegura una gestión eficiente de las transacciones y ayuda a mantener la calidad del servicio, mejorando la experiencia del cliente en el restaurante.
 
+1. Aplicación de Abstracción y Encapsulación
+
+Abstracción
+
+Identificación de entidades clave: El sistema abstrae las entidades principales del dominio, como Cliente, Pedido, Producto, Factura y MetodoDePago.
+
+Generalización de comportamientos: Se creó una clase base abstracta MetodoDePago, de la cual derivan subclases específicas como TarjetaDeCredito y TransferenciaBancaria. Esto permite manejar los diferentes tipos de pago de manera uniforme y escalable.
+
+Encapsulación
+
+Cada clase protege sus atributos utilizando modificadores de acceso (private y protected), garantizando que solo se puedan manipular a través de métodos públicos y controlados, como getters y setters.
+
+Ejemplo: La clase Producto encapsula atributos como nombre, precio y cantidad, asegurando la validación de datos al momento de la modificación.
+
+2. Decisiones de Diseño Relacionadas con Herencia y Polimorfismo
+
+Uso de herencia:
+
+Se diseñó una jerarquía para los diferentes MetodoDePago reutilizando código común.
+
+Por ejemplo, las validaciones generales están en la clase base MetodoDePago, mientras que las validaciones específicas (como verificar fondos en TarjetaDeCredito) están en las subclases.
+
+Uso de polimorfismo:
+
+El método esValidoElPago() se define en la clase base y es sobrescrito en cada subclase. Esto permite que el sistema invoque este método sin preocuparse por el tipo específico del pago.
+
+Ventaja: Extensibilidad al incluir nuevos tipos de pago sin modificar el código existente.
+
+3. Desafíos Encontrados y Soluciones
+
+Desafíos
+
+Evitar redundancias en la relación entre Pedido y Producto:
+
+Solución: Se implementó una relación de composición, donde un Pedido contiene una lista de Producto.
+
+Garantizar la extensibilidad del sistema para nuevos métodos de pago:
+
+Solución: Diseñar MetodoDePago como una clase abstracta, facilitando la adición de nuevos tipos de pago mediante subclases.
+
+Manejo de asociaciones complejas:
+
+Solución: Se agregó una asociación bidireccional entre Cliente y Pedido, mejorando la trazabilidad entre ambos.
+
+4. Cambios Respecto al Diagrama UML Inicial
+
+Modificaciones Realizadas
+
+Incorporación de la clase Cliente:
+
+Razón: Facilitar la gestión de información de los clientes.
+
+Optimización de la clase Factura:
+
+Asociaciones directas con Pedido y MetodoDePago, eliminando redundancias.
+
+Rediseño de MetodoDePago:
+
+Se definió como una clase abstracta para mejorar la extensibilidad.
+
+Impacto Positivo
+
+Las modificaciones mejoraron la escalabilidad y mantenibilidad del sistema.
+
+Redujeron la redundancia en las asociaciones entre clases y facilitaron la inclusión de nuevos requisitos.
+
 ## Imagen del diagrama de la Facturacion Version 0.1
 ![alt text](FactV0.1-1.png)
 
