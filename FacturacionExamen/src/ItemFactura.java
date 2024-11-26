@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ItemFactura {
 
     private float subtotal;
     private int cantidad;
-    private Producto producto; //Relacion con Producto
+    private List<Producto> productos;//Relacion N a N con Producto
 
     //Constructor
-    public ItemFactura(int cantidad, Producto producto) {
+    public ItemFactura(int cantidad) {
         this.cantidad = cantidad;
-        this.producto = producto;
-        this.subtotal = calcularSubtotal();//Calcula el subtotal al crear el ItemFactura
+        this.productos = new ArrayList<>();
+        this.subtotal = 0;
     }
 
     //Getters y Setters
@@ -22,22 +25,44 @@ public class ItemFactura {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-        this.subtotal = calcularSubtotal();//Actualiza el subtotal
+        this.subtotal = calcularSubtotal();
     }
 
-    public Producto getProducto() {
-        return producto;
+    public List<Producto> getProductos() {
+        return productos;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-        this.subtotal = calcularSubtotal(); //Actualiza el subtotal si cambia el producto
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+        this.subtotal = calcularSubtotal();
     }
 
-    //Metodos
+    //metodos
+    public void agregarProducto(Producto producto) {
+        if (!productos.contains(producto)) {
+            productos.add(producto);
+            producto.agregarItemFactura(this);
+            this.subtotal = calcularSubtotal();
+        }
+    }
+
+    public void eliminarProducto(Producto producto) {
+        if (productos.contains(producto)) {
+            productos.remove(producto);
+            producto.eliminarItemFactura(this);
+            this.subtotal = calcularSubtotal();
+        }
+    }
+
     public float calcularSubtotal() {
-        return cantidad * producto.getPrecio();
+        float subtotalTemp = 0;
+        for (Producto producto : productos) {
+            subtotalTemp += cantidad * producto.getPrecio();
+        }
+        return subtotalTemp;
+    }
+
+    public void actualizarSubtotal() {
+        this.subtotal = calcularSubtotal();
     }
 }
-
-

@@ -6,7 +6,7 @@ public class Producto {
     private String nombre;
     private float precio;
     private String descripcion;
-    private List<ItemFactura> itemFacturaList;//Relacion 1 a N con ItemFactura
+    private List<ItemFactura> itemFacturaList;//Relacion N a N con ItemFactura
 
     //Constructor
     public Producto(String nombre, float precio, String descripcion) {
@@ -45,9 +45,11 @@ public class Producto {
         return itemFacturaList;
     }
 
-    //Metodos para gestionar la lista de ItemFactura
+    //metodos para gestionar la lista de ItemFactura
     public void agregarItemFactura(ItemFactura itemFactura) {
-        itemFacturaList.add(itemFactura);
+        if (!itemFacturaList.contains(itemFactura)) {
+            itemFacturaList.add(itemFactura);
+        }
     }
 
     public void eliminarItemFactura(ItemFactura itemFactura) {
@@ -61,10 +63,13 @@ public class Producto {
         }
     }
 
-    //Metodo para actualizar el precio
+    //metodo para actualizar el precio
     public float actualizarPrecio(float nuevoPrecio) {
         this.precio = nuevoPrecio;
+        //Actualizamos el subtotal de cada ItemFactura asociado
+        for (ItemFactura item : itemFacturaList) {
+            item.actualizarSubtotal();
+        }
         return this.precio;
     }
 }
-

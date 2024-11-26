@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c0d978e-20ef-4687-b663-12e91d8c7252" name="Changes" comment="" />
+    <list default="true" id="0c0d978e-20ef-4687-b663-12e91d8c7252" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FacturacionExamen/Promocion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FacturacionExamen/Promocion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ItemFactura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemFactura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Promocion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Promocion.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,15 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/OneDrive/Documentos/Carpeta Git Clone/FacturacionExa/FacturacionExamen/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "release/dddd",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/HP/OneDrive/Documentos/Carpeta Git Clone/FacturacionExa/FacturacionExamen/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

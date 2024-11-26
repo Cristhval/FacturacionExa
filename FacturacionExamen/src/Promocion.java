@@ -5,16 +5,16 @@ public class Promocion {
 
     private String descripcion;
     private float porcentajeDescuento;//Porcentaje de descuento aplicado a las facturas
-    private List<Factura> facturaList;//Asociacion 0..* con Factura
+    private List<Factura> facturaList;//Asociacion con Factura
 
-    // Constructor
+    //Constructor
     public Promocion(String descripcion, float porcentajeDescuento) {
         this.descripcion = descripcion;
         this.porcentajeDescuento = porcentajeDescuento;
         this.facturaList = new ArrayList<>();
     }
 
-    // Getters y Setters
+    //Getters y Setters
     public String getDescripcion() {
         return descripcion;
     }
@@ -35,7 +35,7 @@ public class Promocion {
         return facturaList;
     }
 
-    //Metodos para gestionar la asociacion
+    //metodos para gestionar la asociacion
     public void agregarFactura(Factura factura) {
         facturaList.add(factura);
     }
@@ -44,13 +44,21 @@ public class Promocion {
         facturaList.remove(factura);
     }
 
-    //Metodo para aplicar la promoción a todas las facturas asociadas
+    //metodo para aplicar la promocion a todas las facturas asociadas
     public void aplicarPromocion() {
         for (Factura factura : facturaList) {
+            //Aplicar el descuento de la promocion sobre el descuento existente de la factura
             float nuevoDescuento = factura.getDescuento() + porcentajeDescuento;
-            factura.setDescuento(nuevoDescuento);//Aumenta el descuento de la factura
-            factura.agregarItemFactura(new ItemFactura(1, new Producto("Promoción aplicada",
-                    0, descripcion)));
+            factura.setDescuento(nuevoDescuento); // Aumenta el descuento de la factura
+
+            //Crear un nuevo ItemFactura para reflejar la promocion aplicada
+            Producto productoPromocion = new Producto("Promoción aplicada", 0, descripcion);
+            ItemFactura itemPromocion = new ItemFactura(1);//Cantidad 1 para el producto de promocion
+            itemPromocion.agregarProducto(productoPromocion);//Agregar producto de promocion a ItemFactura
+
+            //Agregar este ItemFactura a la factura
+            factura.agregarItemFactura(itemPromocion);
         }
     }
 }
+
