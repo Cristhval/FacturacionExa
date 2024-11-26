@@ -5,8 +5,8 @@ import java.util.List;
 public class Factura implements DescuentoAplicable {
 
     private int numero;
-    private Date fecha; //Fecha de emision de la factura
-    private Cliente cliente; //Cliente asociado a la factura
+    private Date fecha;//Fecha de emision de la factura
+    private Cliente cliente;//Cliente asociado a la factura
     private float total;
     private float impuestoTotal;
     private float descuento;
@@ -141,11 +141,15 @@ public class Factura implements DescuentoAplicable {
         factura.append("Dirección: ").append(cliente.getDireccion()).append("\n");
         factura.append("Correo Electrónico: ").append(cliente.getCorreoElectronico()).append("\n");
         factura.append("Items:\n");
+
         for (ItemFactura item : itemFacturaList) {
-            factura.append("  - Producto: ").append(item.getProducto().getNombre())
-                    .append(", Cantidad: ").append(item.getCantidad())
-                    .append(", Subtotal: $").append(item.getSubtotal()).append("\n");
+            for (Producto producto : item.getProductos()) {
+                factura.append("  - Producto: ").append(producto.getNombre())
+                        .append(", Cantidad: ").append(item.getCantidad())
+                        .append(", Subtotal: $").append(item.getSubtotal()).append("\n");
+            }
         }
+
         factura.append("Total: $").append(total).append("\n");
         factura.append("Descuento aplicado: ").append(descuento).append("%\n");
         factura.append("Extras: $").append(extras).append("\n");

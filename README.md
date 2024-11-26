@@ -85,7 +85,15 @@ Redujeron la redundancia en las asociaciones entre clases y facilitaron la inclu
 
 ## Imagen del diagrama de la Facturacion Version 0.2  
 ![alt text](FaturacionV2-1.png)
+
+
+## Imagen del diagrama de la Facturacion Version 0.3 
+![alt text](FatuV3-1.png)
+
 El cambio realizado en el diagrama se debe a que la version anterior presentaba redundancias en la definicion de atributos. El objetivo de esta modificación es optimizar el diagrama de clases eliminando dichas redundancias para mejorar la eficiencia y la mantenibilidad del sistema.
+
+Además de corregir algunos errores en las multiplicidades y relaciones, también se agregó algunos metodos en la clase ItemFactura y Producto para brindar más flexibilidad al programa.
+
 ## Licencia
 Copyright (c) 2024 [Valverde Christian, Encalada Juan Diego, Jimbo Darwin.]
 

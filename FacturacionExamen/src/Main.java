@@ -29,9 +29,14 @@ public class Main {
         itemPedido.agregarProducto(producto3);
 
         //Crear items de factura
-        ItemFactura item1 = new ItemFactura(2, producto1);
-        ItemFactura item2 = new ItemFactura(3, producto2);
-        ItemFactura item3 = new ItemFactura(2, producto3);
+        ItemFactura item1 = new ItemFactura(2);
+        item1.agregarProducto(producto1);
+
+        ItemFactura item2 = new ItemFactura(3);
+        item2.agregarProducto(producto2);
+
+        ItemFactura item3 = new ItemFactura(2);
+        item3.agregarProducto(producto3);
 
         //Asociar items a los productos
         producto1.agregarItemFactura(item1);
@@ -48,10 +53,10 @@ public class Main {
         producto3.mostrarItemsFactura();
 
         //Crear fecha
-        Date fechaFactura = new Date();  // Fecha actual
+        Date fechaFactura = new Date();//Fecha actual
 
         //Crear una factura y pasar el cliente, descuento, extras y fecha
-        Factura factura = new Factura(101, cliente, 10, 50, fechaFactura); // Descuento del 10%, extras $50
+        Factura factura = new Factura(101, cliente, 10, 50, fechaFactura);//Descuento del 10%, extras $50
 
         //Agregar items a la factura
         factura.agregarItemFactura(item1);
@@ -59,7 +64,7 @@ public class Main {
         factura.agregarItemFactura(item3);
 
         //Crear promocion
-        Promocion promocionDescuentoCumpleaños = new Promocion("cumpleaños", 10); // Promoción del 10%
+        Promocion promocionDescuentoCumpleaños = new Promocion("cumpleaños", 10);//Promocion del 10%
 
         //Asociar facturas a la promocion
         promocionDescuentoCumpleaños.agregarFactura(factura);
@@ -71,8 +76,8 @@ public class Main {
         System.out.println(factura.imprimirFactura());
 
         //Crear metodos de pago
-        PagoEfectivo efectivo = new PagoEfectivo(150, 101.596f); // Cambio = 50
-        // Asociar métodos de pago a la factura
+        PagoEfectivo efectivo = new PagoEfectivo(150, 101.596f);//Cambio = 50
+        // Asociar metodos de pago a la factura
         factura.agregarMetodoDePago(efectivo);
 
         //Mostrar detalles de los metodos de pago
@@ -94,4 +99,5 @@ public class Main {
         historial.consultarPorMonto(100, 300);
     }
 }
+
 
